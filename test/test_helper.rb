@@ -3,7 +3,7 @@ require 'rubygems'
 require 'active_support'
 require 'active_support/test_case'
 require 'active_record'
-require 'test/unit'
+require 'minitest/autorun'
 
 require "#{File.dirname(__FILE__)}/../init"
 
@@ -24,7 +24,7 @@ def setup_db
       t.timestamps
     end
     add_index :settings, [ :target_type, :target_id, :var ], :unique => true
-    
+
     create_table :users do |t|
       t.string :name
     end
